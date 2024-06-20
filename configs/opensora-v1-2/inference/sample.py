@@ -27,6 +27,7 @@ vae = dict(
     from_pretrained="/mnt/petrelfs/liuwenran/models/OpenSora-VAE-v1.2",
     micro_frame_size=17,
     micro_batch_size=4,
+    force_huggingface=True,
 )
 text_encoder = dict(
     type="t5",

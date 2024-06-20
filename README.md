@@ -227,6 +227,8 @@ docker run -ti --gpus all -v .:/workspace/Open-Sora opensora
 
 See our **[report 1.2](docs/report_03.md)** for more infomation. Weight will be automatically downloaded when you run the inference script.
 
+> For users from mainland China, try `export HF_ENDPOINT=https://hf-mirror.com` to successfully download the weights.
+
 ### Open-Sora 1.1 Model Weights
 
 <details>
@@ -295,7 +297,7 @@ In the Gradio application, the basic options are as follows:
 
 The easiest way to generate a video is to input a text prompt and click the "**Generate video**" button (scroll down if you cannot find). The generated video will be displayed in the right panel. Checking the "**Enhance prompt with GPT4o**" will use GPT-4o to refine the prompt, while "**Random Prompt**" button will generate a random prompt by GPT-4o for you. Due to the OpenAI's API limit, the prompt refinement result has some randomness.
 
-Then, you can choose the **resolution**, **duration**, and **aspect ratio** of the generated video. Different resolution and video length will affect the video generation speed. On a 80G H100 GPU, the generation speed and peak memory usage is:
+Then, you can choose the **resolution**, **duration**, and **aspect ratio** of the generated video. Different resolution and video length will affect the video generation speed. On a 80G H100 GPU, the generation speed (with `num_sampling_step=30`) and peak memory usage is:
 
 |      | Image   | 2s       | 4s        | 8s        | 16s       |
 | ---- | ------- | -------- | --------- | --------- | --------- |
