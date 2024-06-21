@@ -5,7 +5,7 @@ fps = 24
 frame_interval = 1
 save_fps = 24
 
-save_dir = "./samples/samples_img_dance_video"
+save_dir = "./samples/samples_img_dance_img"
 sample_name = 'dance'
 seed = 42
 batch_size = 1
@@ -20,7 +20,7 @@ model = dict(
     qk_norm=True,
     enable_flash_attn=True,
     enable_layernorm_kernel=True,
-    # force_huggingface=True,
+    force_huggingface=True,
 )
 vae = dict(
     type="OpenSoraVAE_V1_2",
