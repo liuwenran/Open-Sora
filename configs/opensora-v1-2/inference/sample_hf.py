@@ -5,8 +5,7 @@ fps = 24
 frame_interval = 1
 save_fps = 24
 
-save_dir = "./samples/samples_img_dance_img"
-sample_name = 'dance'
+save_dir = "./samples/samples/"
 seed = 42
 batch_size = 1
 multi_resolution = "STDiT2"
@@ -16,16 +15,18 @@ align = 5
 
 model = dict(
     type="STDiT3-XL/2",
-    from_pretrained="/mnt/petrelfs/liuwenran/models/OpenSora-STDiT-v3",
+    from_pretrained="hpcai-tech/OpenSora-STDiT-v3",
     qk_norm=True,
     enable_flash_attn=True,
     enable_layernorm_kernel=True,
+    force_huggingface=True,
 )
 vae = dict(
     type="OpenSoraVAE_V1_2",
-    from_pretrained="/mnt/petrelfs/liuwenran/models/OpenSora-VAE-v1.2",
+    from_pretrained="hpcai-tech/OpenSora-VAE-v1.2",
     micro_frame_size=17,
     micro_batch_size=4,
+    force_huggingface=True,
 )
 text_encoder = dict(
     type="t5",
